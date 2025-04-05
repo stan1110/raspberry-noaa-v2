@@ -7,7 +7,7 @@
 #   2. Message
 #
 # Example:
-#   ./scripts/push_processors/push_discord.sh https://discord.com/api/webhooks/1351282018574536866/vZu7RILNYLxL-zH2WNf8GS7rAiE_9nGFtII75cY8w6diNbnQlqf-78s-hwlwkal4fZlU /srv/images/OjumH9-1005327605.jpg "test"
+#   ./scripts/push_processors/push_discord_meteor.sh https://discord.com/api/webhooks/1351282018574536866/vZu7RILNYLxL-zH2WNf8GS7rAiE_9nGFtII75cY8w6diNbnQlqf-78s-hwlwkal4fZlU /srv/images/OjumH9-1005327605.jpg "test"
 
 # import common lib and settings
 . "$HOME/.noaa-v2.conf"
@@ -25,14 +25,14 @@ if [ -f "${IMAGE}" ]; then
   echo $Imagename
   push_log=$(curl -H "Content-Type: multipart/form-data" \
              -F file=@$IMAGE \
-             -F "payload_json={\"username\":\"Walter Froport\",\
-		\"avatar_url\":\"https://media.discordapp.net/attachments/860580595380781066/1351308331595202570/image.png?ex=67d9e774&is=67d895f4&hm=aa4a238ecb903bbecc0d8018a18ea978b7a9f13d9c89c3292b4c3aef722d8968&=&format=webp&quality=lossless\",\
+             -F "payload_json={\"username\":\"Igor Kvakinov\",\
+		\"avatar_url\":\"https://media.discordapp.net/attachments/860580595380781066/1358182508562354287/image.png?ex=67f2e987&is=67f19807&hm=80d60c24bf005f9a97159332d26c6e9c8c89da54425cd8bd3c97a9488e16df82&=&format=webp&quality=lossless\",\
 	\"embeds\":[\
 	{\"title\":\"Daily Weather Report\",\
 	\"description\":\"**Walter Froport:** $MESSAGE\\n\",\
 	\"color\":3341417,\
 	\"image\":{\"url\":\"attachment://$Imagename\"},\
-	\"footer\":{\"text\":\"FROG WEATHER REPORT\"}\
+	\"footer\":{\"text\":\"BOTTOMTEXT\"}\
 	}\
 	]}" $DISCORD_WEBHOOK 2>&1)
              

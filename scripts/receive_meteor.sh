@@ -487,7 +487,7 @@ if [ -n "$(find /srv/images -maxdepth 1 -type f -name "$(basename "$IMAGE_FILE_B
     log "Pushing images to Discord" "INFO"
     for i in $push_file_list
     do
-      ${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_METEOR_WEBHOOK" "$i" "${push_annotation}" >> $NOAA_LOG 2>&1
+      ${PUSH_PROC_DIR}/push_discord_meteor.sh "$DISCORD_METEOR_WEBHOOK" "$i" "${push_annotation}" >> $NOAA_LOG 2>&1
     done
   fi
 else
