@@ -7,6 +7,9 @@ BLUE=$(tput setaf 4)
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 
+chmod u+x $HOME/raspberry-noaa-v2/scripts/receive_meteor.sh
+chmod u+x $HOME/raspberry-noaa-v2/scripts/push_processors/push_discord_meteor.sh
+
 die() {
   >&2 echo "${RED}Error: $1${RESET}" && exit 1
 }
