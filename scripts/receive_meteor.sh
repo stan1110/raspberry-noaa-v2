@@ -482,12 +482,16 @@ if [ -n "$(find /srv/images -maxdepth 1 -type f -name "$(basename "$IMAGE_FILE_B
     done
   fi
 
+Intro="Privet, comrades! I am Igor Kvakinov, your amphibious weather man from Mother Russia."
+Rain="I look at this image with great curiosity, though I do not know exact details of what you see, da? My intuition tells me that rain might decide to make an appearance—maybe in one of the corners or spreading across the whole scene like a surprise from the sky. Whether you spot a light drizzle or a robust shower, it is always wise to have your umbrella nearby, my friends. Enjoy the mysterious ways of weather, and remember, in Russia, even the rain has a bit of character! Spasibo, and have a wonderful day!"
+
+
   # handle Discord pushing if enabled
   if [ "${ENABLE_DISCORD_PUSH}" == "true" ]; then
     log "Pushing images to Discord" "INFO"
     for i in $push_file_list
     do
-      ${PUSH_PROC_DIR}/push_discord_meteor.sh "$DISCORD_METEOR_WEBHOOK" "$i" "${push_annotation}" >> $NOAA_LOG 2>&1
+      ${PUSH_PROC_DIR}/push_discord_meteor.sh "$DISCORD_METEOR_WEBHOOK" "$i" "$i" >> $NOAA_LOG 2>&1
     done
   fi
 else
