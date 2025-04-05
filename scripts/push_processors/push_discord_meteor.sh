@@ -32,7 +32,7 @@ if [ -f "${IMAGE}" ]; then
 	\"description\":\"**Igor Kvakinov:** $MESSAGE\\n\",\
 	\"color\":3341417,\
 	\"image\":{\"url\":\"attachment://$Imagename\"},\
-	\"footer\":{\"text\":\"BOTTOMTEXT\"}\
+	\"footer\":{\"text\":\"ЛЯГУШИЧИЙ МЕТЕОРОЛОГИЧЕСКИЙ ДОКЛАД\"}\
 	}\
 	]}" $DISCORD_WEBHOOK 2>&1)
              
