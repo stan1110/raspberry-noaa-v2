@@ -507,13 +507,31 @@ if [ -n "$(find /srv/images -maxdepth 1 -type f -name "$(basename "$IMAGE_FILE_B
     done
   fi
 
+
+Intro="Ribbit, ribbit, greetings, my fine friends! I'm Walter Froport, your froggy meteorologist, here to bring you the most hoppin' weather update."
+Rain="Now, I must confess—I don't truly know every little detail hidden in this picture—but my froggy gut tells me there might be a sprinkle of rain somewhere about. Perhaps you'll see a gentle shower near the horizon or a light drizzle dancing over a patch of lily pads. Wherever it falls, be it in the upper corner or right smack in the center, it's always best to keep your umbrella at the ready. After all, a little rain can make for a jolly fine day to hop about! Ribbit, and stay dry out there!"
+
   if [ "${ENABLE_DISCORD_PUSH}" == "true" ]; then
     IFS=' ' read -ra image_file_array <<< "$push_file_list"
     for i in "${image_file_array[@]}"; do
-      log "Pushing image enhancement $enhancement to Discord" "INFO"
-      ${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_NOAA_WEBHOOK" "$i" "${push_annotation}" >> $NOAA_LOG 2>&1
+	    FileName=$(basename $i | cut -d- -f5- | cut -d. -f1)
+      case $FileName in
+      	"AVHRR-2")
+      		${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_NOAA_WEBHOOK" "$i" "$Intro" >> $NOAA_LOG 2>&1
+      		log "Pushing image enhancement $enhancement to Discord" "INFO"
+      	;;
+      	"MCIR_Rain")
+      	  ${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_NOAA_WEBHOOK" "$i" "$Rain" >> $NOAA_LOG 2>&1
+      		log "Pushing image enhancement $enhancement to Discord" "INFO"
+      	;;
+        *)
+		      log "DISCORD: Skipping $FileName" "INFO"
+        ;;
+      esac
+      
     done
   fi
+
 else
     # If no matching images are found, there is no need to push images
     log "No images found - not pushing anywhere" "INFO"
