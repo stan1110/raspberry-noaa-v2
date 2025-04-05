@@ -29,7 +29,7 @@ if [ -f "${IMAGE}" ]; then
 		\"avatar_url\":\"https://media.discordapp.net/attachments/860580595380781066/1358182508562354287/image.png?ex=67f2e987&is=67f19807&hm=80d60c24bf005f9a97159332d26c6e9c8c89da54425cd8bd3c97a9488e16df82&=&format=webp&quality=lossless\",\
 	\"embeds\":[\
 	{\"title\":\"Daily Weather Report\",\
-	\"description\":\"**Walter Froport:** $MESSAGE\\n\",\
+	\"description\":\"**Igor Kvakinov:** $MESSAGE\\n\",\
 	\"color\":3341417,\
 	\"image\":{\"url\":\"attachment://$Imagename\"},\
 	\"footer\":{\"text\":\"BOTTOMTEXT\"}\
