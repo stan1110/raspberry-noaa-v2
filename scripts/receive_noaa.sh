@@ -64,8 +64,6 @@ elif [ "$SAT_NAME" == "NOAA 19" ]; then
   NOAA_FREQUENCY=$NOAA19_FREQ
 fi
 
-mkdir -p "${IMAGE_OUTPUT}/${FILENAME_BASE}"
-
 # base directory plus filename helper variables
 RAMFS_AUDIO_BASE="${RAMFS_AUDIO}/${FILENAME_BASE}"
 AUDIO_FILE_BASE="${NOAA_AUDIO_OUTPUT}/${FILENAME_BASE}"
