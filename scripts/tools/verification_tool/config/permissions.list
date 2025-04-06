@@ -263,7 +263,6 @@ file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/push_processors/push_
 file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/push_processors/push_slack.sh
 file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/push_processors/push_twitter.sh
 file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/receive_meteor.sh
-file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/push_discord_meteor.sh
 file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/receive_noaa.sh
 file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/schedule_captures.sh
 file 755 $USER $USER /home/$USER/raspberry-noaa-v2/scripts/schedule.sh
