@@ -67,7 +67,7 @@ fi
 # base directory plus filename helper variables
 RAMFS_AUDIO_BASE="${RAMFS_AUDIO}/${FILENAME_BASE}"
 AUDIO_FILE_BASE="${NOAA_AUDIO_OUTPUT}/${FILENAME_BASE}"
-IMAGE_FILE_BASE="${IMAGE_OUTPUT}/${FILENAME_BASE}/${FILENAME_BASE}"
+IMAGE_FILE_BASE="${IMAGE_OUTPUT}/${FILENAME_BASE}"
 IMAGE_THUMB_BASE="${IMAGE_OUTPUT}/thumb/${FILENAME_BASE}"
 
 # check if there is enough free memory to store pass on RAM
