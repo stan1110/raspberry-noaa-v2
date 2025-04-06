@@ -22,8 +22,8 @@ ntp_server: ''
 #   meteor_decoder - which receiver method to use (either 'meteordemod' or 'satdump')
 receiver_type: 'rtlsdr'
 
-noaa_decoder: 'satdump'
-meteor_decoder: 'satdump'
+noaa_decoder: 'wxtoimg'
+meteor_decoder: 'meteordemod'
 
 # test settings when running test scripts
 #   test_gain - gain to use for scanner test scripts
