@@ -32,9 +32,6 @@ export SAT_MAX_ELEVATION=$6
 export PASS_DIRECTION=$7
 export PASS_SIDE=$8
 
-
-mkdir -p "${IMAGE_OUTPUT}/${FILENAME_BASE}"
-
 # base directory plus filename_base for re-use
 RAMFS_AUDIO_BASE="${RAMFS_AUDIO}/${FILENAME_BASE}"
 AUDIO_FILE_BASE="${METEOR_AUDIO_OUTPUT}/${FILENAME_BASE}"
@@ -43,7 +40,7 @@ IMAGE_THUMB_BASE="${IMAGE_OUTPUT}/thumb/${FILENAME_BASE}"
 
 case "$RECEIVER_TYPE" in
      "rtlsdr")
-         samplerate="2.048e6"
+         samplerate="1.024e6"
          receiver="rtlsdr"
          ;;
      "airspy_mini")
