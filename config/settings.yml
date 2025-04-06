@@ -22,8 +22,8 @@ ntp_server: ''
 #   meteor_decoder - which receiver method to use (either 'meteordemod' or 'satdump')
 receiver_type: 'rtlsdr'
 
-noaa_decoder: 'wxtoimg'
-meteor_decoder: 'meteordemod'
+noaa_decoder: 'satdump'
+meteor_decoder: 'satdump'
 
 # test settings when running test scripts
 #   test_gain - gain to use for scanner test scripts
@@ -32,7 +32,7 @@ meteor_decoder: 'meteordemod'
 #   test_freq_offset - receiver frequency offset (PPM)
 test_gain: 29.7
 test_sdr_device_id: 0
-test_enable_bias_tee: false
+test_enable_bias_tee: true
 test_freq_offset: 0
 
 # whether to schedule specific orbiting objects for capture
@@ -119,7 +119,7 @@ delete_older_than_n: 30
 # if you choose to keep files, they will be automatically deleted after set number of days in delete_files_older_than_days (default is 3 days)
 delete_noaa_audio: false
 delete_meteor_audio: false
-delete_files_older_than_days: 3
+delete_files_older_than_days: 7
 
 # processing settings
 #   flip_meteor_image - whether the meteor image should be flipped
@@ -189,16 +189,16 @@ show_pass_direction: true
 produce_spectrogram: false    #NOTE: the spectrogram option here is available for NOAA only, and the spectrogrma produced is from demodulated audio, not IQ baseband file
 
 noaa_crop_telemetry: false
-produce_noaa_pristine_image: false
+produce_noaa_pristine_image: true
 produce_noaa_pristine_histogram: false
 noaa_daytime_enhancements: 'MSA MSA-precip MCIR MCIR-precip HVC-precip HVCT-precip HVC HVCT ZA therm sea CC HE HF MD BD MB JF JJ LC TA WV NO histeq enhanced-IR'
 noaa_nighttime_enhancements: 'MCIR MCIR-precip HVCT ZA therm NO TA sea histeq enhanced-IR'
-noaa_crop_toptobottom: false
+noaa_crop_toptobottom: true
 noaa_interpolate: false
 noaa_jpg_image_quality: 90
 noaa_thermal_temp_overlay: true
 noaa_thermal_temp_overlay_location: 'NorthEast'
-noaa_map_crosshair_enable: true
+noaa_map_crosshair_enable: false
 noaa_map_crosshair_color: "0xcc3030"
 noaa_map_grid_degrees: 10.0
 noaa_map_grid_color: "0xff0000"
@@ -214,11 +214,11 @@ flip_meteor_image: true
 meteor_jpg_image_quality: 90
 meteor_draw_map_overlay: true
 meteor_draw_cities: true
-meteor_map_crosshair_enable: true
+meteor_map_crosshair_enable: false
 meteor_map_crosshair_color: "#CC3030"
 meteor_map_country_border_color: "#FFFF00"
 meteor_create_rain_probability_overlay: true
-meteor_create_equidistant_projection: true
+meteor_create_equidistant_projection: false
 meteor_create_mercator_projection: false
 meteor_create_spreaded_images_without_overlay: true
 
@@ -249,8 +249,8 @@ web_tls_port: 443
 lock_admin_page: true
 admin_username: 'admin'
 admin_password: 'admin'
-web_passes_date_format: 'm/d/Y'
-web_datetime_format: 'm/d/Y H:i:s'
+web_passes_date_format: 'd/m/Y'
+web_datetime_format: 'd/m/Y H:i:s'
 
 # log level for output from scripts
 log_level: DEBUG
