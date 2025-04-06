@@ -87,7 +87,7 @@ fi
 
 case "$RECEIVER_TYPE" in
      "rtlsdr")
-         samplerate="1.024e6"
+         samplerate="2.048e6"
          receiver="rtlsdr"
          ;;
      "airspy_mini")
@@ -528,7 +528,6 @@ Rain="Now, I must confess—I don't truly know every little detail hidden in thi
       	;;
         *)
 		      log "DISCORD: Skipping $FileName" "INFO"
-          ${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_NOAA_WEBHOOK" "$i" "FILE SYSTEM REDISIGN TEST" >> $NOAA_LOG 2>&1
         ;;
       esac
       
