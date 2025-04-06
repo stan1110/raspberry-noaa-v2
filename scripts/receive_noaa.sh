@@ -507,9 +507,15 @@ if [ -n "$(find /srv/images -maxdepth 1 -type f -name "$(basename "$IMAGE_FILE_B
     done
   fi
 
+FILES_WALTER_INTRO="Walter_intro.txt"
+Intro_NUM=$(shuf -i 1-$(wc -l "${FILES_WALTER_INTRO}") -n 1)
+Intro=$(sed "${Intro_NUM}q;d" "${FILES_WALTER_INTRO}")
 
-Intro="Ribbit, ribbit, greetings, my fine friends! I'm Walter Froport, your froggy meteorologist, here to bring you the most hoppin' weather update."
-Rain="Now, I must confess—I don't truly know every little detail hidden in this picture—but my froggy gut tells me there might be a sprinkle of rain somewhere about. Perhaps you'll see a gentle shower near the horizon or a light drizzle dancing over a patch of lily pads. Wherever it falls, be it in the upper corner or right smack in the center, it's always best to keep your umbrella at the ready. After all, a little rain can make for a jolly fine day to hop about! Ribbit, and stay dry out there!"
+FILES_WALTER_RAIN="Walter_intro.txt"
+RAIN_NUM=$(shuf -i 1-$(wc -l "${FILES_WALTER_RAIN}") -n 1)
+Rain=$(sed "${Intro_NUM}q;d" "${FILES_WALTER_RAIN}")
+
+
 
   if [ "${ENABLE_DISCORD_PUSH}" == "true" ]; then
     IFS=' ' read -ra image_file_array <<< "$push_file_list"
@@ -520,7 +526,7 @@ Rain="Now, I must confess—I don't truly know every little detail hidden in thi
       		${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_NOAA_WEBHOOK" "$i" "$Intro" >> $NOAA_LOG 2>&1
       		log "Pushing image enhancement $enhancement to Discord" "INFO"
       	;;
-      	"MCIR_Rain")
+      	"NO")
       	  ${PUSH_PROC_DIR}/push_discord.sh "$DISCORD_NOAA_WEBHOOK" "$i" "$Rain" >> $NOAA_LOG 2>&1
       		log "Pushing image enhancement $enhancement to Discord" "INFO"
       	;;
