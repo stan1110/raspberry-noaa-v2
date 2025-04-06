@@ -507,11 +507,11 @@ if [ -n "$(find /srv/images -maxdepth 1 -type f -name "$(basename "$IMAGE_FILE_B
     done
   fi
 
-FILES_WALTER_INTRO=Walter_Intro.txt
+FILES_WALTER_INTRO="${NOAA_HOME}/scripts/Walter_Intro.txt"
 Intro_NUM=$(shuf -i 0-$(wc -l < "${FILES_WALTER_INTRO}") -n 1)
 Intro=$(sed "${Intro_NUM}q;d" "${FILES_WALTER_INTRO}")
 
-FILES_WALTER_RAIN=Walter_Rain.txt
+FILES_WALTER_RAIN="${NOAA_HOME}/scripts/Walter_Rain.txt"
 RAIN_NUM=$(shuf -i 0-$(wc -l < "${FILES_WALTER_RAIN}") -n 1)
 Rain=$(sed "${RAIN_NUM}q;d" "${FILES_WALTER_RAIN}")
 echo $Rain
