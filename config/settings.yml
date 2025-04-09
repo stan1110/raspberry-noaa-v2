@@ -304,7 +304,7 @@ enable_email_push: false
 email_push_address: test@ifttt.com
 enable_email_schedule_push: false
 enable_discord_push: true
-discord_noaa_webhook_url: 'https://discord.com/api/webhooks/1351282018574536866/vZu7RILNYLxL-zH2WNf8GS7rAiE_9nGFtII75cY8w6diNbnQlqf-78s-hwlwkal4fZlU'
+discord_noaa_webhook_url: 'https://discord.com/api/webhooks/1359487368712683530/ZY-ameunoclG7ebDX1k1uilkt-yHsGil8uwYAuHsD1rWTFWDTQAJ0x-1g2-G7LT_HLYV'
 discord_meteor_webhook_url: 'https://discord.com/api/webhooks/1351282018574536866/vZu7RILNYLxL-zH2WNf8GS7rAiE_9nGFtII75cY8w6diNbnQlqf-78s-hwlwkal4fZlU'
 enable_pushover_push: false
 pushover_link_url: 'https://<url-to-webpanel>/captures/listImages'
